@@ -1,0 +1,27 @@
+CREATE TABLE member(
+    id int NOT NULL AUTO_INCREMENT,
+    email varchar(255) NOT NULL,
+    pass varchar(255) NOT NULL,
+    surname varchar(255) NOT NULL,
+    name varchar(255) NOT NULL,
+    birthday DATE NOT NULL,
+    gender INT NOT NULL,
+    uid INT,
+    isActivate BOOLEAN DEFAULT FALSE,
+    totalTopUp INT DEFAULT 0,
+    coin INT DEFAULT 0,
+    appellation varchar(255) DEFAULT "Tài Khoản Mới",
+    ip varchar(255),
+    permissionLv INT DEFAULT 0,
+    createdAt DATE DEFAULT CURRENT_DATE(),
+    lastLogin DATETIME,
+    isVerify BOOLEAN DEFAULT FALSE,
+    PRIMARY KEY (id)
+)
+
+CREATE TABLE verifyEmail(
+    id int NOT NULL AUTO_INCREMENT,
+    verifyCode varchar(255),
+    email varchar(255),
+    PRIMARY KEY (id)
+)
